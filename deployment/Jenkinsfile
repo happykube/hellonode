@@ -1,4 +1,9 @@
 def label = "hellonode-${UUID.randomUUID().toString()}"
+def notifySlack(STATUS, COLOR) {
+	slackSend (color: COLOR, message: STATUS+" : " +  "${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})")
+}
+
+notifySlack("STARTED", "#FFFF00")
 
 podTemplate(
 	label: label, 
@@ -68,8 +73,11 @@ podTemplate(
 					sh "kubectl apply -n ${namespace} -f ${ingress}"
 				}
 			}
+
+            notifySlack("${currentBuild.currentResult}", "#00FF00")
 		} catch(e) {
 			currentBuild.result = "FAILED"
+            notifySlack("${currentBuild.currentResult}", "#FF0000")
 		}
 	}
 }
