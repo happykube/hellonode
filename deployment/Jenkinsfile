@@ -15,7 +15,7 @@ podTemplate(
 {
 	node(label) {
 		stage("Get Source") {
-			git "https://github.com/happynsmall/hellonode.git"
+			git "https://github.com/happynsmall/hellonode.git", branch "main"
 		}
 
 		//-- 환경변수 파일 읽어서 변수값 셋팅
