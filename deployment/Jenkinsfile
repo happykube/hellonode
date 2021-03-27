@@ -20,7 +20,7 @@ podTemplate(
 		    //git branch: 'main', url: 'https://github.com/happynsmall/hellonode.git'
         }
 
-		//-- 환경변수 파일 읽어서 변수값 셋팅
+		//-- 환경변수 파일 읽어서 변수값 셋팅 
 		def props = readProperties  file:"deployment/pipeline.properties"
 		def tag = props["version"]
 		def dockerRegistry = props["dockerRegistry"]
