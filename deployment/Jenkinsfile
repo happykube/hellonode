@@ -14,8 +14,8 @@ def notifyMail(STATUS, RECIPIENTS) {
 
 def email_recipients="hiondal@gmail.com,hiondal@daum.net"
 
-notifySlack("STARTED", "#FFFF00")
-notifyMail("STARTED", "${email_recipients}")
+//notifySlack("STARTED", "#FFFF00")
+//notifyMail("STARTED", "${email_recipients}")
 
 podTemplate(
 	label: label, 
@@ -86,12 +86,12 @@ podTemplate(
 				}
 			}
 
-            notifySlack("${currentBuild.currentResult}", "#00FF00")
-            notifyMail("${currentBuild.currentResult}", "${email_recipients}")
+            //notifySlack("${currentBuild.currentResult}", "#00FF00")
+            //notifyMail("${currentBuild.currentResult}", "${email_recipients}")
 		} catch(e) {
 			currentBuild.result = "FAILED"
-            notifySlack("${currentBuild.currentResult}", "#FF0000")
-            notifyMail("${currentBuild.currentResult}", "${email_recipients}")
+            //notifySlack("${currentBuild.currentResult}", "#FF0000")
+            //notifyMail("${currentBuild.currentResult}", "${email_recipients}")
 		}
 	}
 }
