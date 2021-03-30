@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: hellonode
-          image: happynsmall/hellonode
+          image: happykube/hellonode
           imagePullPolicy: Always
           env:
             - name: PORT
