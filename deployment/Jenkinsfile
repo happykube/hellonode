@@ -57,7 +57,7 @@ podTemplate(
 					sh "sonar-scanner \
 						-Dsonar.projectName=hellonode \
 						-Dsonar.projectKey=hellonode \
-						-Dsonar.sources=routes \
+						-Dsonar.sources=./routes/** \
 						-Dsonar.language=javascript \
 						-Dsonar.host.url=http://sonar.169.56.84.37.nip.io \
 						-Dsonar.login=fc08239f2b7cc8ac0abb26f271a91ba56f45f78b"      
