@@ -48,7 +48,7 @@ podTemplate(
 		def ingress = props["ingress"]
 		def selector_key = props["selector_key"]
 		def selector_val = props["selector_val"]
-		def namespace = props["namespace"]
+		def namespace = props["namespace"] 
 
 		try {
 			
